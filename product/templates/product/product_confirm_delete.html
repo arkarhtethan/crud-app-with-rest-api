@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<p>
+		Are u sure you want to delete {{object}} ?
+	</p>
+
+	<form action="" method="POST">
+
+		{% csrf_token %}
+
+		<button>
+			<a href="{% url 'product:detail' pk=object.pk %}">
+				Back
+			</a>
+		</button>
+		
+		<input type="submit" value="Delete">
+
+	</form>
+
+{% endblock %}
